@@ -19,6 +19,7 @@ def getter(self, key):
 
 Result.__getattr__ = getter
 
-# Let's make the module look like a plugin
-def noop(helper, result):
+def first_name(helper, result):
+    result.name = result.name[0] if isinstance(result.name, (tuple, list)) else result.name
+    result.label = result.label[0] if isinstance(result.label, (tuple, list)) else result.label
     return result

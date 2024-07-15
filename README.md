@@ -4,15 +4,17 @@
 
 ## Addressed problem
 
-The default code only pick the first `name` from the document, let's keep all.
+The default core code only pick the first `name` from the document, let's keep all.
+
+Then keep only the first one as a plugin.
 
 ## Configuration
 
-Add `addok_multiple_result_name.noop`.
+Add `addok_multiple_result_name.first_name`.
 
 ```
 SEARCH_RESULT_PROCESSORS_PYPATHS = [
     ...
-    'addok_multiple_result_name.noop',  # Do nothing, only apply the monkey patch at import time
+    'addok_multiple_result_name.first_name',  # Also apply the monkey patch at import time
     ...
 ```
